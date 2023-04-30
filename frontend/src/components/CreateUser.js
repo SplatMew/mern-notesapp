@@ -67,7 +67,7 @@ export default class CreateUser extends Component {
               this.state.users.map(user => 
               <li className='list-group-item list-group-item-action' 
                   key = {user._id}
-                  onDoubleClick={() => this.deleteUser(user._id)}
+                  onDoubleClick={() => {if(window.confirm('Are you sure you want to delete this note?'))this.deleteUser(user._id)}}
                   >
               {user.username}
             </li> )

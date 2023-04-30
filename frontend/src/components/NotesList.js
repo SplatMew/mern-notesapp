@@ -45,7 +45,7 @@ export default class NotesList extends Component {
                   <p>{format(note.date)}</p>
                 </div>
                 <div className="card-footer">
-                  <button className='btn btn=danger' onClick={() => this.deleteNote(note._id)}>
+                  <button className='btn btn=danger' onClick={() => {if(window.confirm('Are you sure you want to delete this note?')) this.deleteNote(note._id)}}>
                     Delete
                   </button>
                 </div>
