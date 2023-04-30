@@ -9,6 +9,8 @@ export default class CreateNote extends Component {
     users:[],
     userSelected: '',
     date: '',
+    title: '',
+    content: '',
     editing: false,
     _id: ''
   }
@@ -38,9 +40,9 @@ export default class CreateNote extends Component {
     };
 
     if(this.state.editing){
-      await axios.put('http://localhost:4001/api/notes/' + this.state._id, newNote);
+      await axios.put('https://mern-notesapp-uy45.onrender.com/api/notes/' + this.state._id, newNote);
     } else {
-      await axios.post('http://localhost:4001/api/notes', newNote);
+      await axios.post('https://mern-notesapp-uy45.onrender.com/api/notes', newNote);
      }
 
     window.location.href = '/';

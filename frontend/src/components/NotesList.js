@@ -13,12 +13,12 @@ export default class NotesList extends Component {
   }
 
   deleteNote = async (id) => {
-    const res = await axios.delete('http://localhost:4001/api/notes/' + id);
+    const res = await axios.delete('https://mern-notesapp-uy45.onrender.com/api/notes/' + id);
     this.getNotes();
   }
 
   async getNotes() {
-    const res = await axios.get('http://localhost:4001/api/notes')
+    const res = await axios.get('https://mern-notesapp-uy45.onrender.com/api/notes')
     this.setState({ notes: res.data })
   }
 

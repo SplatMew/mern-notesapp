@@ -16,12 +16,12 @@ export default class CreateUser extends Component {
 
   deleteUser = async (id) =>{
     console.log(id);
-    await axios.delete('http://localhost:4001/api/users/' + id)
+    await axios.delete('https://mern-notesapp-uy45.onrender.com/api/users/' + id)
     this.getUsers();
   }
 
   getUsers = async () => { 
-    const res = await axios.get('http://localhost:4001/api/users');
+    const res = await axios.get('https://mern-notesapp-uy45.onrender.com/api/users');
     this.setState({users: res.data});
   }
 
@@ -33,7 +33,7 @@ export default class CreateUser extends Component {
 
   onSubmit = async (e) => {
     e.preventDefault();
-    await axios.post('http://localhost:4001/api/users', {
+    await axios.post('https://mern-notesapp-uy45.onrender.com/api/users', {
       username: this.state.username
     })
     this.setState({username: ''})
