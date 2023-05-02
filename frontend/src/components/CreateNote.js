@@ -17,7 +17,7 @@ export default class CreateNote extends Component {
 
   async componentDidMount(){
 
-    const res = await axios.get('http://localhost:4001/api/users');
+    const res = await axios.get('https://mern-notesapp-uy45.onrender.com/api/users');
     this.setState({users: res.data.map(user => user.username),
                   userSelected:res.data[0].username
                 });
